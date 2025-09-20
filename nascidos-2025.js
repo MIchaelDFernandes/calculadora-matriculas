@@ -1,4 +1,13 @@
-let nascimento = {
+const ETAPAS = {
+    "Berçário 1": "ETAPA 4",
+    "Berçário 2": "ETAPA 5",
+    "Maternal 1": "ETAPA 6",
+    "Maternal 2": "ETAPA 7",
+    "Jardim 1": "ETAPA 1",
+    "Jardim 2": "ETAPA 2",
+}
+
+const nascimento = {
     "2025": {
         "JAN-MAR": "Berçário 1"
     },
