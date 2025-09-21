@@ -1,4 +1,4 @@
-const ETAPAS = {
+export const ETAPAS = {
     "Berçário 1": "ETAPA 4",
     "Berçário 2": "ETAPA 5",
     "Maternal 1": "ETAPA 6",
@@ -7,7 +7,7 @@ const ETAPAS = {
     "Jardim 2": "ETAPA 2",
 }
 
-const nascimento = {
+export const GRADES_BY_BIRTHDATE = {
     "2025": {
         "JAN-MAR": "Berçário 1"
     },
