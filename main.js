@@ -1,20 +1,30 @@
 import { ETAPAS, GRADES_BY_BIRTHDATE } from './nascidos-2026.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const birthdateInput = document.getElementById('birthdate-input');
     const resultDiv = document.getElementById('result');
+    const monthSelect = document.getElementById('month-select');
+    const yearSelect = document.getElementById('year-select');
+    const confirmBirthdateButton = document.getElementById('confirm-birthdate-button');
 
-    birthdateInput.addEventListener('change', (event) => {
-        const birthDateString = event.target.value;
-        if (birthDateString) {
-            const parts = birthDateString.split('-');
-            const birthDate = new Date(parts[0], parts[1] - 1, parts[2]);
-            const gradeInfo = calculateGrade(birthDate);
-            const formattedDate = `${parts[2]}/${parts[1]}/${parts[0]}`;
-            resultDiv.textContent = `Quem nasceu em ${formattedDate} está no ${gradeInfo.gradeName} - ${gradeInfo.etapa}`;
-        } else {
-            resultDiv.textContent = 'Escolha uma data de nascimento.';
-        }
+    // Populate year select
+    const years = Object.keys(GRADES_BY_BIRTHDATE).sort((a, b) => b - a);
+    years.forEach(year => {
+        const option = document.createElement('option');
+        option.value = year;
+        option.textContent = year;
+        yearSelect.appendChild(option);
+    });
+
+    confirmBirthdateButton.addEventListener('click', () => {
+        const month = parseInt(monthSelect.value, 10);
+        const year = parseInt(yearSelect.value, 10);
+
+        const birthDate = new Date(year, month, 1);
+        const gradeInfo = calculateGrade(birthDate);
+
+        const monthName = monthSelect.options[monthSelect.selectedIndex].text;
+
+        resultDiv.textContent = `Quem nasceu em ${monthName} de ${year} está no ${gradeInfo.gradeName} - ${gradeInfo.etapa}`;
     });
 
     function calculateGrade(birthDate) {

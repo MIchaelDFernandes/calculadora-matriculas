@@ -1,64 +1,33 @@
+# Project Blueprint: School Enrollment Calculator
 
-# Blueprint: Matrículas em 2025 UI
+## 1. Overview
 
-This document outlines the plan for creating a web-based UI to determine the correct school grade for a student in 2025 based on their birth date.
+An interactive web application that calculates the correct school grade for a child in the year 2026 based on their date of birth. The application provides a simple and intuitive interface for users to select a birth month and year and instantly see the result.
 
-## 1. Project Overview
+## 2. Design and Features
 
-The goal is to recreate the provided UI using modern, framework-less web standards (HTML, CSS, JavaScript). The application will allow a user to pick a date of birth and will display the corresponding school grade for the year 2025.
+### Current Style (Dark Theme)
 
-**Core Features:**
-- A simple, clean UI based on the provided image.
-- A date picker for selecting the date of birth.
-- Logic to calculate the correct school grade based on the selected date.
-- Display the result to the user.
-
-## 2. Design and Style (Visual Plan)
-
-The application will adhere to the following design principles:
-
-*   **Layout:** A single-column, centered layout that is responsive.
+*   **Layout:** A single-column, centered layout that is responsive and optimized for both mobile and desktop screens.
 *   **Color Palette:**
-    *   Background: A light, off-white/beige color (`#f7f6f4`).
-    *   Text: Black (`#000000`).
-    *   Button: Black background (`#000000`) with white text (`#ffffff`).
-*   **Typography:** A clean, sans-serif font (e.g., Arial, Helvetica).
+    *   Background: A dark, modern background color (`#2c2c3a`).
+    *   Text: A light, readable color (`#f0f0f0`).
+    *   Accent: A reddish-pink color (`#d96666`) used for borders, labels, and the primary button.
+*   **Typography:** A clean, sans-serif font (system default).
     *   Main Title (`h1`): Large and bold.
     *   Subtitle (`p`): Smaller than the title.
 *   **Components:**
-    *   **Date Button:** A prominent button with a calendar icon.
-    *   **Result Display:** A simple bordered box to show the calculated grade.
+    *   **Date Form:** A styled form block containing month and year select dropdowns and a "Confirmar" button.
+        *   **Inputs (`select`):** Dark background with an accent-colored border.
+        *   **Button:** Solid accent color background with uppercase, bold white text.
+    *   **Result Display:** A bordered box with an accent color to display the calculated grade.
     *   **Info Icon:** A small informational icon.
 
-## 3. Implementation Plan (Phase 1: UI)
+## 3. Current Task: Fix Styling Issues
 
-This is the plan for the initial implementation of the user interface.
+### Plan
 
-### Step 1: HTML (`index.html`)
-
-*   Create the basic page structure.
-*   Add a `div` to act as the main container for the content.
-*   Add an `h1` element for the title: "Matrículas em 2025".
-*   Add a `p` element for the subtitle.
-*   Add a `button` element that will trigger the date picker. This button will contain a calendar icon (SVG) and the text "Escolha uma data".
-*   Add an invisible `<input type="date">` that will be programmatically opened.
-*   Add a `div` to display the result.
-*   Add a small `div` or `span` for the info icon.
-
-### Step 2: CSS (`style.css`)
-
-*   Apply a general reset to ensure consistent styling.
-*   Style the `body` to center the content on the page.
-*   Define styles for the main container, title, and subtitle.
-*   Style the date picker button to match the design (black, rounded corners).
-*   Style the result display box.
-*   Style the info icon.
-*   Ensure the layout is responsive and looks good on mobile devices.
-
-### Step 3: JavaScript (`main.js`)
-
-*   Add an event listener to the "Escolha uma data" button.
-*   When the button is clicked, trigger a click on the hidden `<input type="date">`.
-*   Add an event listener to the date input to detect when the user selects a date.
-*   Implement the `calculateGrade(birthDate)` function. This function will contain the logic for determining the school grade based on the age of the person on March 31, 2025.
-*   Update the result `div` with the calculated grade.
+1.  **Diagnose:** The new dark theme styles are not being applied in the browser.
+2.  **Hypothesis:** This is likely a browser caching issue, where the old stylesheet is being served instead of the updated one.
+3.  **Solution:** Force the browser to reload the stylesheet by adding a version query string to the `<link>` tag in `index.html`. For example: `<link rel="stylesheet" href="style.css?v=1.1">`.
+4.  **Update Blueprint:** Ensure the `blueprint.md` file is updated to reflect the current dark theme design. (This step)
