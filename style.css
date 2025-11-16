@@ -56,6 +56,12 @@ p {
     transition: background-color 0.3s ease;
 }
 
+.date-picker-button svg,
+.date-picker-button span {
+    pointer-events: none;
+}
+
+
 .date-picker-button:hover {
     background-color: #333;
 }
