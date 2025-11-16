@@ -2,17 +2,7 @@ import { ETAPAS, GRADES_BY_BIRTHDATE } from './nascidos-2026.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const birthdateInput = document.getElementById('birthdate-input');
-    const datePickerButton = document.getElementById('date-picker-button');
     const resultDiv = document.getElementById('result');
-
-    datePickerButton.addEventListener('click', () => {
-        try {
-            birthdateInput.showPicker();
-        } catch (error) {
-            console.log("showPicker() not supported, falling back to click().");
-            birthdateInput.click();
-        }
-    });
 
     birthdateInput.addEventListener('change', (event) => {
         const birthDateString = event.target.value;
