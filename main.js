@@ -1,4 +1,4 @@
-import { ETAPAS, GRADES_BY_BIRTHDATE } from './nascidos-2025.js';
+import { ETAPAS, GRADES_BY_BIRTHDATE } from './nascidos-2026.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const birthdateInput = document.getElementById('birthdate-input');
