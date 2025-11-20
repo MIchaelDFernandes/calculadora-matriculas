@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const monthName = monthSelect.options[monthSelect.selectedIndex].text;
 
-        resultDiv.textContent = `Quem nasceu em ${monthName} de ${year} está no ${gradeInfo.gradeName} - ${gradeInfo.etapa}`;
+        resultDiv.innerHTML = `<p>Quem nasceu em <span>${monthName} de ${year}</span> está no ${gradeInfo.gradeName} - ${gradeInfo.etapa}</p>`;
+        resultDiv.style.display = "flex";
     });
 
     function calculateGrade(birthDate) {

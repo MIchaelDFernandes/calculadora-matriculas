@@ -88,12 +88,16 @@ select {
     border-radius: 8px;
     padding: 1rem 2rem;
     min-height: 3rem;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     margin: 1.5rem auto;
     max-width: 300px;
     color: #f0f0f0;
+}
+
+.result span{
+    font-weight: bold;
 }
 
 .info-icon-svg {
